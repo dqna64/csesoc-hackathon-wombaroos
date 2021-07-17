@@ -11,12 +11,12 @@ export default class BarChart extends React.Component {
             type: 'bar'
           },
           xaxis: {
-            categories: props.categories
+            categories: ["Cameron", "Danil", "Dominic", "Joseph", "Gordon"]
           }
         },
         series: [{
           name: 'series-1',
-          data: props.data
+          data: [89,85,82,80,76]
         }]
       }
     }
