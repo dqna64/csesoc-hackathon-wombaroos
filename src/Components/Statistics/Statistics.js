@@ -15,6 +15,7 @@ import {
     Link,
     useHistory,
   } from "react-router-dom";
+import BarChart from './BarChart'
 import moment from 'moment';
 
 moment().format();
@@ -27,9 +28,10 @@ export default function Statistics(props) {
 
     const returnButtonString = "<  Back to Deck";
 
+
     return (
         <div className="statistics-page">
-            <h1>Group Statistics: {groupName}</h1>
+            <h1 className="statistics-page-title">Group Statistics: {groupName}</h1>
             <div className="statistics-container">
                 <div className="go-back-button">
                     <Button 
@@ -43,7 +45,7 @@ export default function Statistics(props) {
                     </Button>
                 </div>
                 <div>
-                    graph one
+                    <BarChart />
                 </div>
             </div>
         </div>
