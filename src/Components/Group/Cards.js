@@ -1,6 +1,6 @@
 import React from "react";
 import { setItem, getItem, removeItem } from '../../Services/storage.js';
-import Card from "./Card";
+import FlashCard f./Flashcard/Card";
 import "./Cards.css";
 
 
@@ -30,6 +30,7 @@ export default function Cards(props) {
 
     fetchCardNames();
 
+    console.log(cards);
     console.log(groupName, deckName);
 
     return (
@@ -38,7 +39,11 @@ export default function Cards(props) {
                 Deck Name: {deckName}
             </div>
             <p>Start Revision</p>
-            {cards.map((card) => (<Card name={card}/>))}
+            {cards.map((card) => (<FlashCard 
+                question={card.question}
+                answer={card.answer}
+                className="cardStuff"    
+            />))}
         </div>
     )
 }

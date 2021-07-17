@@ -23,3 +23,8 @@
 .joingroupBut {
     padding: 3px !important;
 }
+
+.AddGroupButton {
+    width: 220px;
+    height: 220px;
+}

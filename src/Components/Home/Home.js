@@ -36,7 +36,7 @@ export default function Home() {
       <h1 className="groupTitle">Groups</h1>
       <div className="group-container">
         {groupsNames.map((group) => <StudyGroupButton name={group}/>)}
-        <AddGroupButton/>
+        <AddGroupButton className="AddGroupButton"/>
       </div>
       <div className="joingroupBut">
         <TextField id="outlined-basic" label="Enter invite link" variant="outlined" >

@@ -14,23 +14,25 @@ import {
     useHistory,
   } from "react-router-dom";
 
-// const useStyles = makeStyles({
-//     root: {
-//       minWidth: 275,
-//     },
-//     bullet: {
-//       display: 'inline-block',
-//       margin: '0 2px',
-//       transform: 'scale(0.8)',
-//     },
-//     title: {
-//       fontSize: 14,
-//     },
-//     pos: {
-//       marginBottom: 12,
-//     },
-// });
-iards.css    console.log(props)FlFlashclashCard
+const useStyles = makeStyles({
+    root: {
+      minWidth: 275,
+    },
+    bullet: {
+      display: 'inline-block',
+      margin: '0 2px',
+      transform: 'scale(0.8)',
+    },
+    title: {
+      fontSize: 14,
+    },
+    pos: {
+      marginBottom: 12,
+    },
+});
+import "./Cards.css"
+export default function Flashcard(props) {
+    console.log(props)
 
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
@@ -39,8 +41,8 @@ iards.css    console.log(props)FlFlashclashCard
         <div>
             <p className="whiteWord">{props.question}</p>
             <p>{props.answer}</p>
-            <FlashCard className={classes.root}>
-             FlashCardCardContent>
+            <Card className={classes.root}>
+                <CardContent>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
                     Word of the Day
                     </Typography>
@@ -59,7 +61,7 @@ iards.css    console.log(props)FlFlashclashCard
                 <CardActions>
                     <Button size="small">Learn More</Button>
                 </CardActions>
-            </FlashCard>
-        </div>FlashCard
+            </Card>
+        </div>
     )
 }
