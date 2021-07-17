@@ -1,0 +1,23 @@
+h1.statistics-page-title {
+    color: white;
+}
+
+.statistics-page {
+    width: 100%;
+}
+
+.statistics-container {
+    width: 100%;
+    border-style: none;
+    border-radius: 16px;
+    background-color: #e9eef5;
+    width: 30%;
+    margin-right: 20px;
+    padding: 22px 28px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}

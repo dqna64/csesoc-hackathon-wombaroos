@@ -1,15 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { setItem, getItem, removeItem } from '../../Services/storage.js';
-import { Link } from 'react-router-dom';
 import { Table } from 'reactstrap';
 import Box from '@material-ui/core/Box';
 import "./Group.css"
 import User from "./User"
+import { Button } from '@material-ui/core';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useHistory,
+  } from "react-router-dom";
 
 export default function Users(props) {
+    const history = useHistory();
+
     return (
         <div className='users-container'>
-            <h2>Members</h2>
+            <div className="users-header">
+                <h2>Members</h2>
+                <Button 
+                    onClick={() => {
+                        history.push("/statistics/" + props.parentGroup)
+                    }}
+                    variant="outlined" 
+                    color="primary">
+                    Statistics
+                </Button>
+            </div>
             <Box borderRadius={16}>
                 <Table>
                     <thead>

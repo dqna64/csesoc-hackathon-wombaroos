@@ -32,7 +32,7 @@ let groups =  [
         colour: "#1639B8",
         decks: [
             {
-                name: "Deck1",
+                name: "Binary Search Trees",
                 dateCreated: "2021-07-13",
                 cards: [
                     {
@@ -46,7 +46,7 @@ let groups =  [
                 ]
             },
             {
-                name: "Deck2",
+                name: "Graph Theory",
                 dateCreated: "2021-07-15",
                 cards : [
                     {
@@ -58,7 +58,7 @@ let groups =  [
         ]
     },
     {
-        name: "Group2",
+        name: "Physics Tutorial Wednesday",
         members: [
             {
                 "name": "Cameron",
@@ -79,9 +79,23 @@ let groups =  [
         colour: "#22A9B8",
         decks: [
             {
-                name: "Deck1",
+                name: "Mechanics",
+                dateCreated: "2021-07-14",
+                cards: [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            },
+            {
+                name: "Electromagnetism",
                 dateCreated: "2021-07-08",
-                cards : [
+                cards: [
                     {
                         question: "Favourite colour",
                         answer: "Blue"
@@ -156,7 +170,7 @@ export function getDeckCards(groupName, deckName) {
     let groups = getItem("groups");
     for (const group of groups) {
         if (group.name == groupName) {
-            for (const deck in group.decks) {
+            for (const deck of group.decks) {
                 if (deck.name == deckName) {
                     cardArray = group.deck.cards
                 }
@@ -180,7 +194,7 @@ export function getAllMembers(groupName) {
 // Saves the deck to the group.
 export function saveDeck(deck, groupName) {
     let groups = getItem("groups");
-    for (const group in groups) {
+    for (const group of groups) {
         if (group.name == groupName) {
             group.decks.push(deck);    
         }
@@ -190,10 +204,10 @@ export function saveDeck(deck, groupName) {
 // Saves the given card in the group's deck.
 export function saveCard(card, deckName, groupName) {
     let groups = getItem("groups");
-    for (const group in groups) {
+    for (const group of groups) {
         if (group.name == groupName) {
-            for (const deck in group.deck) {
-                if (deck == deckName) {
+            for (const deck of group.deck) {
+                if (deck.name == deckName) {
                     deck.cards.push(card);
                 }
             }

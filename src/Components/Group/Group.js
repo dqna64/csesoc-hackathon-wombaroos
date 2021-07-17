@@ -121,7 +121,10 @@ export default function Group(props) {
                 <h1>Group Name: {groupName}</h1>
             </div>
             <div className='group-contents'>
-                <Users usersData={usersData} />
+                <Users
+                    usersData={usersData} 
+                    parentGroup={groupName}
+                />
                 <Decks
                     decksData={decksData}
                     parentGroup={groupName}
