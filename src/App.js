@@ -20,9 +20,6 @@ export default function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/main">Main</Link>
-          </li>
-          <li>
             <Link to="/group">Group</Link>
           </li>
         </ul>
@@ -39,9 +36,6 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-          </Route>
-          <Route path="/main">
-            <Main />
           </Route>
           <Route path="/group">
             <Group />

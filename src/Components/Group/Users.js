@@ -3,7 +3,7 @@ import { setItem, getItem, removeItem } from '../../Services/storage.js';
 import { Link } from 'react-router-dom';
 import { Table } from 'reactstrap';
 import Box from '@material-ui/core/Box';
-import "./Users.css"
+import "./Group.css"
 import User from "./User"
 
 export default function Users(props) {

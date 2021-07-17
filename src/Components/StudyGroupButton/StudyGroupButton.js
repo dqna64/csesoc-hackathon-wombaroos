@@ -14,11 +14,14 @@ import {
 const MyBox = styled(Box)({
   background: '#313752',
   border: 0,
-  borderRadius: 3,
+  borderRadius: 10,
   color: 'white',
-  height: "50%",
-  width: "25%",
-  cursor: "pointer"
+  height: 200,
+  width: 200,
+  margin: "10px",
+  cursor: "pointer",
+  textAlign: "center",
+  lineHeight: 12,
 });
 
 export default function StudyGroupButton(props) {

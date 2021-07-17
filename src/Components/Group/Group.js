@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { setItem, getItem, removeItem } from '../../Services/storage.js';
 import { Link } from 'react-router-dom';
+import "./Group.css"
 import Users from "./Users";
 import Decks from "./Decks";
 
-const data = [
+const usersData = [
     {
         "name": "Cameron",
         "contributions": 92,
@@ -29,6 +30,21 @@ const data = [
         "name": "Gordon",
         "contributions": 81,
         "reviews": 353,
+    },
+];
+
+const decksData = [
+    {
+        "name": "Trees",
+        "dateCreated": "2021-07-13",
+    },
+    {
+        "name": "Graphs",
+        "dateCreated": "2021-07-14",
+    },
+    {
+        "name": "Sorting Algorithms",
+        "dateCreated": "2021-07-16",
     },
 ];
 
@@ -75,15 +91,9 @@ export default function Group(props) {
 
     return (
         <div className='group-container'>
-            <Users usersData={data} />
-            <Decks />
+            <Users usersData={usersData} />
+            <Decks decksData={decksData}/>
             
         </div>
     );  
 } 
-
-
-const groupContainerStyles = {
-        color: 'turquoise',
-        backgroundColor: 'navy',
-    }

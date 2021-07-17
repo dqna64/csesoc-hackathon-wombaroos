@@ -1,5 +1,18 @@
 import React, { useState } from 'react';
-import { setItem, getItem, removeItem, setSessionItem, getSessionItem, removeSessionItem, } from '../../Services/storage.js';
+import {
+    setItem,
+    getItem,
+    removeItem,
+    setSessionItem,
+    getSessionItem,
+    removeSessionItem,
+    getAllDecks,
+    getDeckCards,
+    getAllMembers,
+    saveDeck,
+    saveCard,
+    saveGroup
+} from '../../Services/storage.js';
 import { Link } from 'react-router-dom';
 
 function AddDeck(props) {
@@ -10,17 +23,19 @@ function AddDeck(props) {
         setSessionItem('currentDeckTitle', event.target.value)
     }
 
-    function saveDeck() {
+    function createDeck() {
         let deckTitle = deckTitle.trim();
         if (deckTitle) {
-            let array_deck = [deckTitle];
-            let storedDecks = getItem('decks', []);
-            storedDecks.push(array_deck);
-            setItem('decks', storedDecks);
-            props.setDecks(storedDecks);
+            //let array_deck = [deckTitle];
 
-            //remove items from session storage when saving deck
-            removeSessionItem('currentDeckTitle');
+            //let storedDecks = getItem('decks', []);
+
+            //storedDecks.push(array_deck);
+            //setItem('decks', storedDecks);
+            //props.setDecks(storedDecks);
+
+            ////remove items from session storage when saving deck
+            //removeSessionItem('currentDeckTitle');
         } else {
             alert('Please provide a title');
         }
@@ -41,7 +56,7 @@ function AddDeck(props) {
             </form>
 
             <Link to="/" className="btn btn-success"
-                onClick={saveDeck}>Save Deck</Link>
+                onClick={createDeck}>Create Deck</Link>
 
         </div>
     );
