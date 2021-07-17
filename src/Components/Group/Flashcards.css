@@ -7,3 +7,20 @@
     color: white;
 
 }
+
+.flashcards-container {
+    border-style: none;
+    border-radius: 16px;
+    background-color: #e9eef5;
+    width: 100%;
+    padding: 20px 28px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.flashcard-container {
+    /* width: 50%; */
+    padding: 20px;
+}

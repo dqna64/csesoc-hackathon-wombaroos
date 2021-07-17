@@ -23,6 +23,7 @@ const MyBox = styled(Box)({
   cursor: "pointer",
   textAlign: "center",
   lineHeight: 12,
+  boxShadow: "0 10px 20px -8px rgba(0, 0, 0,.7)",
 });
 
 export default function AddGroupButton(props) {

@@ -39,11 +39,13 @@ export default function Cards(props) {
                 Deck Name: {deckName}
             </div>
             <p>Start Revision</p>
-            {cards.map((card) => (<FlashCard 
-                question={card.question}
-                answer={card.answer}
-                className="cardStuff"    
-            />))}
+            <div className="flashcards-container">
+                {cards.map((card) => (<FlashCard 
+                    question={card.question}
+                    answer={card.answer}
+                    className="cardStuff"    
+                />))}
+            </div>
         </div>
     )
 }
