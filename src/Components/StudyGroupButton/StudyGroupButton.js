@@ -21,7 +21,7 @@ export default function StudyGroupButton(props) {
 
   return (
     <Box className="GroupButton" onClick={() => { history.push("/group/" + props.name) }}>
-      <div className="title">{props.name}</div>
+      <div className="group-button-title">{props.name}</div>
     </Box>
   )
 }
