@@ -165,21 +165,6 @@ export function getAllDecks(groupName) {
 
 }
 
-export function getDeckCards(groupName, deckName) {
-    let cardArray = []
-    let groups = getItem("groups");
-    for (const group of groups) {
-        if (group.name == groupName) {
-            for (const deck of group.decks) {
-                if (deck.name == deckName) {
-                    cardArray = group.deck.cards
-                }
-            }
-        }
-    }
-    return cardArray
-}
-
 export function getAllMembers(groupName) {
     let groups = getItem("groups", []);
     for (const group of groups) {
@@ -188,6 +173,21 @@ export function getAllMembers(groupName) {
         }
     }
 }
+
+export function getDeckCards(groupName, deckName) {
+    let cardArray = []
+    let groups = getItem("groups");
+    for (const group of groups) {
+        if (group.name == groupName) {
+            for (const deck of group.decks) {
+                if (deck.name == deckName) {
+                    cardArray = group.deck.cards
+                }    
+            }    
+        }    
+    }    
+    return cardArray
+}    
 
 
 

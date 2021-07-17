@@ -8,21 +8,21 @@ export default class BarChart extends React.Component {
       this.state = {
         options: {
           chart: {
-            id: 'apexchart-example'
+            type: 'bar'
           },
           xaxis: {
-            categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+            categories: props.categories
           }
         },
         series: [{
           name: 'series-1',
-          data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
+          data: props.data
         }]
       }
     }
     render() {
-      return (
-        <Chart options={this.state.options} series={this.state.series} type="bar" width={500} height={320} />
+        return (
+        <Chart options={this.state.options} series={this.state.series} type="bar" width={800} height={320} />
       )
     }
   }

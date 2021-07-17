@@ -15,6 +15,22 @@ import {
     Link,
     useHistory,
   } from "react-router-dom";
+  import {
+    loadDummyData,
+    setItem,
+    getItem,
+    removeItem,
+    setSessionItem,
+    getSessionItem,
+    removeSessionItem,
+    getAllDecks,
+    getDeckCards,
+    getAllMembers,
+    saveDeck,
+    saveCard,
+    saveGroup,
+    fetchGroupNames
+} from '../../Services/storage.js';
 import BarChart from './BarChart'
 import moment from 'moment';
 
@@ -27,6 +43,16 @@ export default function Statistics(props) {
     console.log(`this statistics page is for ${groupName}`)
 
     const returnButtonString = "<  Back to Deck";
+
+    const usersData = getAllMembers(groupName);
+    const userNames = [usersData.map((user) => (
+        user.name
+    ))];
+    const userContributions = [usersData.map((user) => (
+        user.contributions
+    ))];
+    console.log(userNames);
+    console.log(userContributions);
 
 
     return (
@@ -45,7 +71,10 @@ export default function Statistics(props) {
                     </Button>
                 </div>
                 <div>
-                    <BarChart />
+                    <BarChart 
+                        categories={userNames}
+                        data={userContributions}
+                    />
                 </div>
             </div>
         </div>
