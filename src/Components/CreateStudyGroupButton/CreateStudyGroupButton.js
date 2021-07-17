@@ -16,8 +16,9 @@ const MyBox = styled(Box)({
   border: 0,
   borderRadius: 3,
   color: 'white',
-  height: 100,
-  width: 48,
+  height: 100pxpx,
+  width: 48pxx,
+  padding: '0 30px',
   cursor: "pointer"
 });
 
@@ -26,7 +27,7 @@ export default function StudyGroupButton(props) {
 
   return (
     <MyBox onClick={() => { history.push("/group") }}>
-      <p>{props.name}</p>
+      <p>Create Group</p>
     </MyBox>
   )
 }

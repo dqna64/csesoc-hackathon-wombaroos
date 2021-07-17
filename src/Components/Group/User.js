@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 
 export default function User(props) {
     return (
-        <div>
-            {props.name} {props.contributions} {props.reviews}
-        </div>
+        <tr>
+            <td>{props.name}</td>
+            <td>{props.contributions}</td>
+            <td>{props.reviews}</td>
+        </tr>
     )
 }

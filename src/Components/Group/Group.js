@@ -74,10 +74,17 @@ export default function Group(props) {
     //</div>
 
     return (
-        <div>
+        <div className='group-container'>
             <Users usersData={data} />
             <Decks />
             
         </div>
     );  
 } 
+
+
+const headingStyles = {
+        color: 'turquoise',
+        backgroundColor: 'navy',
+    }
+.group-container {}

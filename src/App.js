@@ -8,7 +8,8 @@ import {
 
 import Home from "./Components/Home/Home"
 import Main from "./Components/Main/Main"
-import Groups from "./Components/Group/Group"
+import Group from "./Components/Group/Group"
+import AddGroup from "./Components/AddGroup/AddGroup";
 
 export default function App() {
   return (
@@ -44,6 +45,9 @@ export default function App() {
           </Route>
           <Route path="/group">
             <Group />
+          </Route>
+          <Route path="/add-group">
+            <AddGroup />
           </Route>
         </Switch>
       </div>

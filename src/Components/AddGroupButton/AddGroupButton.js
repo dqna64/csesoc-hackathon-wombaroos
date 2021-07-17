@@ -16,17 +16,18 @@ const MyBox = styled(Box)({
   border: 0,
   borderRadius: 3,
   color: 'white',
-  height: 100,
-  width: 48,
+  height: "30%",
+  width: "30%",
+  padding: '0 30px',
   cursor: "pointer"
 });
 
-export default function StudyGroupButton(props) {
+export default function AddGroupButton(props) {
   const history = useHistory();
 
   return (
-    <MyBox onClick={() => { history.push("/group") }}>
-      <p>{props.name}</p>
+    <MyBox onClick={() => { history.push("/add-group") }}>
+      <p>Create Group</p>
     </MyBox>
   )
 }
