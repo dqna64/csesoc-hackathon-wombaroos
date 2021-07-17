@@ -10,7 +10,7 @@ import Home from "./Components/Home/Home"
 import Main from "./Components/Main/Main"
 import Group from "./Components/Group/Group"
 import AddGroup from "./Components/AddGroup/AddGroup";
-import Cards from "./Components/Group/Cards";
+import Flashcards from "./Components/Group/Flashcards";
 import "./App.css"
 export default function App() {
   return (
@@ -28,7 +28,7 @@ export default function App() {
             <Home />
           </Route>
           <Route path="/group/:groupname" component={Group} />
-          <Route path="/deck/:groupname/:deckname" component={Cards} />
+          <Route path="/deck/:groupname/:deckname" component={Flashcards} />
           <Route path="/add-group">
             <AddGroup />
           </Route>

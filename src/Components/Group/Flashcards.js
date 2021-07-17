@@ -1,7 +1,7 @@
 import React from "react";
 import { setItem, getItem, removeItem } from '../../Services/storage.js';
-import FlashCard f./Flashcard/Card";
-import "./Cards.css";
+import FlashCard from "./Flashcard";
+import "./Flashcards.css";
 
 
 

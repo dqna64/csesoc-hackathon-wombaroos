@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./Group.css"
+import "./Flashcards.css"
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -30,7 +31,6 @@ const useStyles = makeStyles({
       marginBottom: 12,
     },
 });
-import "./Cards.css"
 export default function Flashcard(props) {
     console.log(props)
 

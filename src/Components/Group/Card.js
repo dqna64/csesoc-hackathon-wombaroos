@@ -30,7 +30,7 @@ import {
 //       marginBottom: 12,
 //     },
 // });
-iards.css    console.log(props)FlFlashclashCard
+   console.log(props);
 
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
