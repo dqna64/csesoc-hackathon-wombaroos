@@ -1,0 +1,14 @@
+
+.deck {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.form-group {
+    width: 180px;
+}
+
+.btn {
+    height: 38px;
+}

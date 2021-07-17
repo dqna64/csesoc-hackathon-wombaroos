@@ -3,3 +3,8 @@
     flex-direction: column;
     flex-wrap: nowrap;
 }
+
+.whiteElement {
+    background-color: #eaeef4 !important;
+    margin-bottom: 3px;
+}

@@ -43,16 +43,18 @@ export default function AddGroup() {
             <TextField
                 label="Title"
                 inputRef={titleRef}
+                className="whiteElement"
             ></TextField>
             <TextField
                 multiline={true}
                 rows={10}
                 label="Description"
                 inputRef={descriptionRef}
+                className="whiteElement"
             >
 
             </TextField>
-            <Button onClick={createGroup}>
+            <Button className="whiteElement" onClick={createGroup}>
                 Create Group
             </Button>
             

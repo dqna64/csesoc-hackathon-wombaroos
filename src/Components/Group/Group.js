@@ -1,10 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { setItem, getItem, removeItem } from '../../Services/storage.js';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import "./Group.css"
 import Users from "./Users";
 import Decks from "./Decks";
+import {
+    loadDummyData,
+    setItem,
+    getItem,
+    removeItem,
+    setSessionItem,
+    getSessionItem,
+    removeSessionItem,
+    getAllDecks,
+    getDeckCards,
+    getAllMembers,
+    saveDeck,
+    saveCard,
+    saveGroup,
+    fetchGroupNames
+  } from '../../Services/storage.js';
+
 
 const usersData = [
     {
@@ -92,14 +108,34 @@ export default function Group(props) {
 
     // ########### -----TO ADD
 
+
+    const group = {};
+    function getGroupFromGroupsData(groupsData, searchingFor) {
+        for (let i = 0; i < groupsData.length; i++) {
+            console.log(`I am now ${groupsData[i]}`)
+            if (groupsData[i].name == searchingFor) {
+                group = groupsData[i];
+                break;
+            }
+        }
+    }
+    
+    let groupsData = fetchGroupNames();
+    console.log(groupName);
+    getGroupFromGroupsData(groupsData, groupName)
+    console.log(group)
+
     return (
         <div className='group-page-container'>
             <div className='group-title'>
                 <h1>Group Name: {groupName}</h1>
             </div>
             <div className='group-contents'>
-                <Users usersData={usersData} />
-                <Decks decksData={decksData}/>
+                {/* <Users usersData={groupsData[groupName].members} /> */}
+                <Decks
+                    decksData={decksData}
+                    parentGroup={groupName}
+                />
             </div>
             {/* <div className="deckBoard">
                 <div className="list">

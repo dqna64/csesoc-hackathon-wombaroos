@@ -13,10 +13,11 @@ import AddGroup from "./Components/AddGroup/AddGroup";
 
 export default function App() {
   return (
+    <div className="App">
     <Router>
       <div>
         <ul>
-          <li>
+          <li>  
             <Link to="/">Home</Link>
           </li>
         </ul>
@@ -34,5 +35,6 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+    </div>
   );
 }

@@ -37,60 +37,109 @@ export function removeSessionItem(key) {
 }
 
 // JSON Structure for Data
-// groups: [
-//     {
-//         name: "Group1",
-//         members: ["Joey", "Danil", "Cam", "Gordon", "Dom"],
-//         colour: "#1639B8",
-//         decks: [
-//             {
-//                 name: "Deck1",
-//                 cards : [
-//                     {
-//                         question: "How to search binary tree",
-//                         answer: "Recursion"
-//                     },
-//                     {
-//                         question: "Are graphs good?",
-//                         answer: "yes"
-//                     }
-//                 ]
-//             },
-//             {
-//                 name: "Deck2",
-//                 cards : [
-//                     {
-//                         question: "sample question",
-//                         answer: "sample answer"
-//                     }
-//                 ]
-//             }
-//         ]
-//     },
-//     {
-//         name: "Group2",
-//         members: ["Joey", "greg", "steven"],
-//         colour: "#22A9B8",
-//         decks: [
-//             {
-//                 name: "Deck1",
-//                 cards : [
-//                     {
-//                         question: "Favourite colour",
-//                         answer: "Blue"
-//                     },
-//                     {
-//                         question: "Apples or oranges",
-//                         answer: "both"
-//                     }
-//                 ]
-//             }
-//         ]
-//     }
-// ]
+let groups =  [
+    {
+        name: "Group1",
+        members: [
+                    {
+                        "name": "Cameron",
+                        "contributions": 92,
+                        "reviews": 462,
+                    },
+                    {
+                        "name": "Danil",
+                        "contributions": 90,
+                        "reviews": 501,
+                    },
+                    {
+                        "name": "Dominic",
+                        "contributions": 88,
+                        "reviews": 508,
+                    },
+                    {
+                        "name": "Joseph",
+                        "contributions": 85,
+                        "reviews": 512,
+                    },
+                    {
+                        "name": "Gordon",
+                        "contributions": 81,
+                        "reviews": 353,
+                    },
+                ],
+        colour: "#1639B8",
+        decks: [
+            {
+                name: "Deck1",
+                dateCreated: "2021-07-13",
+                cards: [
+                    {
+                        question: "How can we search a binary tree?",
+                        answer: "Recursion"
+                    },
+                    {
+                        question: "Are graphs good?",
+                        answer: "Yes"
+                    }
+                ]
+            },
+            {
+                name: "Deck2",
+                dateCreated: "2021-07-15",
+                cards : [
+                    {
+                        question: "How do we solve a system of linear equations?",
+                        answer: "Create a matrix and convert it to row-echelon form"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: "Group2",
+        members: [
+            {
+                "name": "Cameron",
+                "contributions": 92,
+                "reviews": 462,
+            },
+            {
+                "name": "Danil",
+                "contributions": 90,
+                "reviews": 501,
+            },
+            {
+                "name": "Dominic",
+                "contributions": 88,
+                "reviews": 508,
+            },
+        ],
+        colour: "#22A9B8",
+        decks: [
+            {
+                name: "Deck1",
+                dateCreated: "2021-07-08",
+                cards : [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+export function loadDummyData() {
+    setItem("groups", groups);
+}
 
 
-function getAllDecks(groupName) {
+export function getAllDecks(groupName) {
     let deckArray = []
     let groups = getItem("groups");
     for (const group in groups){
@@ -102,7 +151,7 @@ function getAllDecks(groupName) {
 
 }
 
-function getDeckCards(groupName, deckName) {
+export function getDeckCards(groupName, deckName) {
     let cardArray = []
     let groups = getItem("groups");
     for (const group in groups) {
@@ -117,7 +166,7 @@ function getDeckCards(groupName, deckName) {
     return cardArray
 }
 
-function getAllMembers(groupName) {
+export function getAllMembers(groupName) {
     let memberArray = []
     let groups = getItem("groups");
     for (const group in groups) {
@@ -130,9 +179,8 @@ function getAllMembers(groupName) {
 
 
 
-// TO ADD
-
-function saveDeck(deck, groupName) {
+// Saves the deck to the group.
+export function saveDeck(deck, groupName) {
     let groups = getItem("groups");
     for (const group in groups) {
         if (group.name == groupName) {
@@ -141,20 +189,32 @@ function saveDeck(deck, groupName) {
     }    
 }
 
-function saveCard(card, deckName, groupName) {
+// Saves the given card in the group's deck.
+export function saveCard(card, deckName, groupName) {
     let groups = getItem("groups");
     for (const group in groups) {
         if (group.name == groupName) {
             for (const deck in group.deck) {
                 if (deck == deckName) {
-                    deck.push(card);
+                    deck.cards.push(card);
                 }
             }
         }
     }
 }
 
-function saveGroup(group) {
+// Saves the group to the group array.
+export function saveGroup(group) {
     let groups = getItem("groups");
     groups.push(group);
 }
+
+export function fetchGroupNames() {
+    let groupsData = [];
+    const data = getItem('groups', []);
+    let i;
+    for (i = 0; i < data.length; i++) {
+      groupsData.push(data[i].name);
+    }
+    return groupsData;
+  }

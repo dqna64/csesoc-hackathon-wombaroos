@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 
 const MyBox = styled(Box)({
-  background: '#313752',
+  background: '#23357a',
   border: 0,
   borderRadius: 10,
   color: 'white',

@@ -6,6 +6,7 @@ import StudyGroupButton from '../StudyGroupButton/StudyGroupButton';
 import AddGroupButton from "../AddGroupButton/AddGroupButton";
 import "./Home.css";
 import {
+  loadDummyData,
   setItem,
   getItem,
   removeItem,
@@ -17,36 +18,30 @@ import {
   getAllMembers,
   saveDeck,
   saveCard,
-  saveGroup } from '../../Services/storage.js';
+  saveGroup,
+  fetchGroupNames
+} from '../../Services/storage.js';
 
 export default function Home() {
-  // const [groups, setGroups] = useState([]);
-  const groups = [];
 
-  function fetchGroupNames() {
-    const data = getItem('groups', []);
-    let i;
-    for (i = 0; i < data.length; i++) {
-      // console.log(data[i]);
-      groups.push(data[i].name);
-    }
-  }
-
-  fetchGroupNames();
+  // loadDummyData();
+  let groups = [];
+  groups = fetchGroupNames();
 
   return (
-    <div>
-    <div className="group-container">
-      {groups.map((group) => <StudyGroupButton name={group}/>)}
-      <AddGroupButton/>
+    <div className="home-page-container">
+      <div className="group-container">
+        {groups.map((group) => <StudyGroupButton name={group}/>)}
+        <AddGroupButton/>
 
-      
-    </div>
-    <div>
-      <p>Or create or join a group</p>
-      <TextField id="outlined-basic" label="Enter invite link" variant="outlined" />
-      <Button variant="contained">Join</Button>
-    </div>
+        
+      </div>
+      <div>
+        <p>Or create or join a group</p>
+
+        <TextField id="outlined-basic" label="Enter invite link" variant="outlined"/>
+        <Button variant="contained">Join</Button>
+      </div>
     </div>
   )
 }

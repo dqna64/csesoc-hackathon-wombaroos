@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     setItem,
     getItem,
@@ -14,21 +14,31 @@ import {
     saveGroup
 } from '../../Services/storage.js';
 import { Link } from 'react-router-dom';
+import "./AddDeck.css"
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
-function AddDeck(props) {
-    const [deckTitle, setDeckTitle] = useState(getSessionItem('currentDeckTitle', ''));
+let i = 0;
 
-    function onChangeDeckTitle(event) {
-        setDeckTitle(event.target.value);
-        setSessionItem('currentDeckTitle', event.target.value)
-    }
+export function AddDeck(props) {
+    const deckTitleRef = useRef("");
 
     function createDeck() {
-        let deckTitle = deckTitle.trim();
+        let deckTitle = deckTitleRef.current.value;
         if (deckTitle) {
-            //let array_deck = [deckTitle];
+            let deck = {
+                name: deckTitle,
+                cards: [],
+            }
 
-            //let storedDecks = getItem('decks', []);
+            let groups = getItem("groups");
+            for (let i = 0; i < groups.length; i++) {
+                if (groups[i].name == props.group) {
+                    groups[i].decks.push(deck);
+                }
+            }
+
+            setItem('groups', groups);
 
             //storedDecks.push(array_deck);
             //setItem('decks', storedDecks);
@@ -36,6 +46,8 @@ function AddDeck(props) {
 
             ////remove items from session storage when saving deck
             //removeSessionItem('currentDeckTitle');
+            i++;
+            props.update(i);
         } else {
             alert('Please provide a title');
         }
@@ -45,22 +57,23 @@ function AddDeck(props) {
         <div className="deck">
             <form>
                 <div className="form-group">
-                    <label htmlFor="title">Title</label>
-                    <input type="text"
+                    {/* <label htmlFor="title">Title</label>
+                    {/* <input type="text"
                         className="form-control"
                         id="title"
                         placeholder="Title..."
-                        value={getSessionItem('currentDeckTitle', '')}
-                        onChange={onChangeDeckTitle} />
+                        inputRef={deckTitleRef} 
+                    />  */}
+                    <TextField
+                        label="Title"
+                        inputRef={deckTitleRef}
+                    ></TextField>
                 </div>
             </form>
-
-            <Link to="/" className="btn btn-success"
-                onClick={createDeck}>Create Deck</Link>
-
+            <Button onClick={createDeck}>
+                Create Deck
+            </Button>
         </div>
     );
 }
-
-export default AddDeck;
 
