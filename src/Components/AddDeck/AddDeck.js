@@ -50,7 +50,7 @@ export function AddDeck(props) {
 
     return (
         <div className="deck">
-            <form>
+            <form className="create-deck-form">
                 <div className="form-group">
                     <TextField
                         label="Title"
@@ -58,7 +58,10 @@ export function AddDeck(props) {
                     ></TextField>
                 </div>
             </form>
-            <Button onClick={createDeck}>
+            <Button 
+                onClick={createDeck} 
+                variant="outlined" 
+                className="create-deck-button">
                 Create Deck
             </Button>
         </div>

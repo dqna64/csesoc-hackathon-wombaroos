@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import moment from 'moment';
 import {
     BrowserRouter as Router,
     Switch,
@@ -23,6 +24,8 @@ const useStyles = makeStyles({
     height: 140,
   },
 });
+
+moment().format();
 
 const styles = 
 {
@@ -56,7 +59,7 @@ export default function Deck(props) {
                             {props.name}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Date created:{props.dateCreated}
+                            Date created: {moment(props.dateCreated).format("MMM Do, YYYY")}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
