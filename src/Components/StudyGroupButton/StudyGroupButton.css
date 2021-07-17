@@ -1,0 +1,44 @@
+.GroupButton {
+    border-radius: 4px;
+    background-color: #23357a;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    padding: 16px;
+    width: 220px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 36px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    height: 220px;
+    border-radius: 10px;
+    line-height: 12px;
+}
+
+.GroupButton {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.GroupButton:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.GroupButton:hover {
+    padding-right: 24px;
+    padding-left: 8px;
+    background-color: rgba(0, 0, 0,255);
+}
+
+.GroupButton:hover:after {
+    opacity: 1;
+    right: 10px;
+}

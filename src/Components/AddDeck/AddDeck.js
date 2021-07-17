@@ -28,6 +28,7 @@ export function AddDeck(props) {
         if (deckTitle) {
             let deck = {
                 name: deckTitle,
+                dateCreated: "2021-07-18",
                 cards: [],
             }
 
@@ -39,15 +40,9 @@ export function AddDeck(props) {
             }
 
             setItem('groups', groups);
-
-            //storedDecks.push(array_deck);
-            //setItem('decks', storedDecks);
-            //props.setDecks(storedDecks);
-
-            ////remove items from session storage when saving deck
-            //removeSessionItem('currentDeckTitle');
             i++;
             props.update(i);
+            deckTitleRef.current.value = ""
         } else {
             alert('Please provide a title');
         }
@@ -57,13 +52,6 @@ export function AddDeck(props) {
         <div className="deck">
             <form>
                 <div className="form-group">
-                    {/* <label htmlFor="title">Title</label>
-                    {/* <input type="text"
-                        className="form-control"
-                        id="title"
-                        placeholder="Title..."
-                        inputRef={deckTitleRef} 
-                    />  */}
                     <TextField
                         label="Title"
                         inputRef={deckTitleRef}

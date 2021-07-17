@@ -22,25 +22,26 @@ import {
   fetchGroupNames
 } from '../../Services/storage.js';
 
+
+loadDummyData();
+
+
 export default function Home() {
 
-  // loadDummyData();
-  let groups = [];
-  groups = fetchGroupNames();
+  let groupsNames = [];
+  groupsNames = fetchGroupNames();
 
   return (
     <div className="home-page-container">
+      <h1 className="groupTitle">Groups</h1>
       <div className="group-container">
-        {groups.map((group) => <StudyGroupButton name={group}/>)}
+        {groupsNames.map((group) => <StudyGroupButton name={group}/>)}
         <AddGroupButton/>
-
-        
       </div>
-      <div>
-        <p>Or create or join a group</p>
-
-        <TextField id="outlined-basic" label="Enter invite link" variant="outlined"/>
-        <Button variant="contained">Join</Button>
+      <div className="joingroupBut">
+        <TextField id="outlined-basic" label="Enter invite link" variant="outlined" >
+        <Button variant="contained">Join Group</Button>
+        </TextField>
       </div>
     </div>
   )

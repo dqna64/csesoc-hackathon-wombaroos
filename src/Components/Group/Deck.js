@@ -41,7 +41,7 @@ export default function Deck(props) {
     return (
         <div className='deck-container'>
 
-            <Card className='' onClick={() => { history.push(props.name);console.log(props) }}>
+            <Card className='' onClick={() => { history.push("/deck/" + props.group + "/" + props.name);console.log("/deck/" + props.group + "/" + props.name) }}>
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}

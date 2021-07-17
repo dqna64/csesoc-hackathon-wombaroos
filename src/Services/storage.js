@@ -140,21 +140,19 @@ export function loadDummyData() {
 
 
 export function getAllDecks(groupName) {
-    let deckArray = []
-    let groups = getItem("groups");
-    for (const group in groups){
+    let groups = getItem("groups", []);
+    for (const group of groups){
         if (group.name == groupName) {
-            deckArray = group.decks
+            return JSON.parse(JSON.stringify(group.decks));
         }
     }
-    return deckArray
 
 }
 
 export function getDeckCards(groupName, deckName) {
     let cardArray = []
     let groups = getItem("groups");
-    for (const group in groups) {
+    for (const group of groups) {
         if (group.name == groupName) {
             for (const deck in group.decks) {
                 if (deck.name == deckName) {
@@ -167,14 +165,12 @@ export function getDeckCards(groupName, deckName) {
 }
 
 export function getAllMembers(groupName) {
-    let memberArray = []
-    let groups = getItem("groups");
-    for (const group in groups) {
+    let groups = getItem("groups", []);
+    for (const group of groups) {
         if (group.name == groupName) {
-            memberArray = group.members
+            return JSON.parse(JSON.stringify(group.members));
         }
     }
-    return memberArray
 }
 
 
@@ -210,11 +206,11 @@ export function saveGroup(group) {
 }
 
 export function fetchGroupNames() {
-    let groupsData = [];
+    let groupsNames = [];
     const data = getItem('groups', []);
     let i;
     for (i = 0; i < data.length; i++) {
-      groupsData.push(data[i].name);
+        groupsNames.push(data[i].name);
     }
-    return groupsData;
+    return groupsNames;
   }

@@ -22,48 +22,48 @@ import {
   } from '../../Services/storage.js';
 
 
-const usersData = [
-    {
-        "name": "Cameron",
-        "contributions": 92,
-        "reviews": 462,
-    },
-    {
-        "name": "Danil",
-        "contributions": 90,
-        "reviews": 501,
-    },
-    {
-        "name": "Dominic",
-        "contributions": 88,
-        "reviews": 508,
-    },
-    {
-        "name": "Joseph",
-        "contributions": 85,
-        "reviews": 512,
-    },
-    {
-        "name": "Gordon",
-        "contributions": 81,
-        "reviews": 353,
-    },
-];
+// const usersData = [
+//     {
+//         "name": "Cameron",
+//         "contributions": 92,
+//         "reviews": 462,
+//     },
+//     {
+//         "name": "Danil",
+//         "contributions": 90,
+//         "reviews": 501,
+//     },
+//     {
+//         "name": "Dominic",
+//         "contributions": 88,
+//         "reviews": 508,
+//     },
+//     {
+//         "name": "Joseph",
+//         "contributions": 85,
+//         "reviews": 512,
+//     },
+//     {
+//         "name": "Gordon",
+//         "contributions": 81,
+//         "reviews": 353,
+//     },
+// ];
 
-const decksData = [
-    {
-        "name": "Trees",
-        "dateCreated": "2021-07-13",
-    },
-    {
-        "name": "Graphs",
-        "dateCreated": "2021-07-14",
-    },
-    {
-        "name": "Sorting Algorithms",
-        "dateCreated": "2021-07-16",
-    },
-];
+// const decksData = [
+//     {
+//         "name": "Trees",
+//         "dateCreated": "2021-07-13",
+//     },
+//     {
+//         "name": "Graphs",
+//         "dateCreated": "2021-07-14",
+//     },
+//     {
+//         "name": "Sorting Algorithms",
+//         "dateCreated": "2021-07-16",
+//     },
+// ];
 
 export default function Group(props) {
     const groupName = props.match.params.groupname;
@@ -108,22 +108,12 @@ export default function Group(props) {
 
     // ########### -----TO ADD
 
-
-    const group = {};
-    function getGroupFromGroupsData(groupsData, searchingFor) {
-        for (let i = 0; i < groupsData.length; i++) {
-            console.log(`I am now ${groupsData[i]}`)
-            if (groupsData[i].name == searchingFor) {
-                group = groupsData[i];
-                break;
-            }
-        }
-    }
     
-    let groupsData = fetchGroupNames();
     console.log(groupName);
-    getGroupFromGroupsData(groupsData, groupName)
-    console.log(group)
+    const decksData = getAllDecks(groupName);
+    const usersData = getAllMembers(groupName);
+    console.log(decksData);
+    console.log(usersData);
 
     return (
         <div className='group-page-container'>
@@ -131,7 +121,7 @@ export default function Group(props) {
                 <h1>Group Name: {groupName}</h1>
             </div>
             <div className='group-contents'>
-                {/* <Users usersData={groupsData[groupName].members} /> */}
+                <Users usersData={usersData} />
                 <Decks
                     decksData={decksData}
                     parentGroup={groupName}

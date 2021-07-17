@@ -10,25 +10,17 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+import "./StudyGroupButton.css";
 
 const MyBox = styled(Box)({
-  background: '#23357a',
-  border: 0,
-  borderRadius: 10,
-  color: 'white',
-  height: 200,
-  width: 200,
-  margin: "10px",
-  cursor: "pointer",
-  textAlign: "center",
-  lineHeight: 12,
+  
 });
 
 export default function StudyGroupButton(props) {
   const history = useHistory();
 
   return (
-    <MyBox onClick={() => { history.push("/group/" + props.name) }}>
+    <MyBox className="GroupButton" onClick={() => { history.push("/group/" + props.name) }}>
       <p>{props.name}</p>
     </MyBox>
   )

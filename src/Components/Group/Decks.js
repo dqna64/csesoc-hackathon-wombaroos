@@ -32,6 +32,7 @@ export default function Decks(props) {
             </div>
             {decks.map((deck) => (<Deck
                 name={deck.name}
+                group={props.parentGroup}
                 // dateCreated={deckData.dateCreated}
                 image="/tree-image.jpg"
             />))}
