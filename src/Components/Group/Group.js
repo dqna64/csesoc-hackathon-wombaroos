@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { setItem, getItem, removeItem } from '../../Services/storage.js';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 import "./Group.css"
 import Users from "./Users";
 import Decks from "./Decks";
@@ -91,9 +92,13 @@ export default function Group(props) {
 
     return (
         <div className='group-container'>
-            <Users usersData={usersData} />
-            <Decks decksData={decksData}/>
-            <p>Group Name: {groupName}</p>
+            <div clasName='group-title'>
+                <h1>Group Name: {groupName}</h1>
+            </div>
+            <div className='group-contents'>
+                <Users usersData={usersData} />
+                <Decks decksData={decksData}/>
+            </div>
         </div>
     );  
 } 

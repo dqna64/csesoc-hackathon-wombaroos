@@ -19,13 +19,10 @@ export default function App() {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/group">Group</Link>
-          </li>
         </ul>
 
         <hr />
-
+        
         <Switch>
           <Route exact path="/">
             <Home />
