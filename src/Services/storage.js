@@ -1,7 +1,7 @@
 // JSON Structure for Data
 let groups =  [
     {
-        name: "Group1",
+        name: "Data Structures and Algorithms",
         members: [
                     {
                         "name": "Cameron",

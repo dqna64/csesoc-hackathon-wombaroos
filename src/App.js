@@ -15,26 +15,27 @@ import "./App.css"
 export default function App() {
   return (
     <div className="App">
-    <Router>
-      <div >
-        <div className="home">  
-            <Link to="/" className="homeLink">Home</Link>
-        </div>
+        <Router>
+        <div >
+            <div className="home">  
+                <Link to="/" className="homeLink">Home</Link>
+            </div>
 
-        <hr />
-        
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/group/:groupname" component={Group} />
-          <Route path="/deck/:groupname/:deckname" component={Flashcards} />
-          <Route path="/add-group">
-            <AddGroup />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+            {/* <hr /> */}
+            <div className="switch-container">
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/group/:groupname" component={Group} />
+                    <Route path="/deck/:groupname/:deckname" component={Flashcards} />
+                    <Route path="/add-group">
+                        <AddGroup />
+                    </Route>
+                </Switch>
+            </div>
+        </div>
+        </Router>
     </div>
   );
 }

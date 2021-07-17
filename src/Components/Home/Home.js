@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <div className="home-page-container">
-      <h1 className="groupTitle">Groups</h1>
+      <h1 className="groupTitle">My Groups</h1>
       <div className="group-container">
         {groupsNames.map((group) => <StudyGroupButton name={group}/>)}
         <AddGroupButton className="AddGroupButton"/>
