@@ -21,8 +21,9 @@ export default function Home() {
             return <StudyGroupButton name={group}/>
           })
         }
-        <AddGroupButton />
+        
       </Grid>
+      <AddGroupButton />
 
       <p>Or create or join a group</p>
       <TextField id="outlined-basic" label="Enter invite link" variant="outlined" />

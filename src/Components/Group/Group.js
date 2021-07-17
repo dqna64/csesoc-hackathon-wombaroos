@@ -83,8 +83,7 @@ export default function Group(props) {
 } 
 
 
-const headingStyles = {
+const groupCcontainerStyles = {
         color: 'turquoise',
         backgroundColor: 'navy',
     }
-.group-container {}
