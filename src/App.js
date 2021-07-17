@@ -8,6 +8,7 @@ import {
 
 import Home from "./Components/Home/Home"
 import Main from "./Components/Main/Main"
+import Groups from "./Components/Group/Group"
 
 export default function App() {
   return (
@@ -19,6 +20,9 @@ export default function App() {
           </li>
           <li>
             <Link to="/main">Main</Link>
+          </li>
+          <li>
+            <Link to="/group">Group</Link>
           </li>
         </ul>
 
@@ -37,6 +41,9 @@ export default function App() {
           </Route>
           <Route path="/main">
             <Main />
+          </Route>
+          <Route path="/group">
+            <Group />
           </Route>
         </Switch>
       </div>
