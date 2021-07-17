@@ -3,6 +3,14 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { setItem, getItem, removeItem, setSessionItem, getSessionItem, removeSessionItem, } from '../../Services/storage.js';
+import "./AddGroup.css";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useHistory,
+} from "react-router-dom";
 
 const members = ["A", "B", "C", "D", "E"];
 
@@ -10,8 +18,9 @@ const members = ["A", "B", "C", "D", "E"];
 export default function AddGroup() {
     const titleRef = useRef("");
     const descriptionRef = useRef("");
+    const history = useHistory();
 
-    function saveGroup() {
+    function createGroup() {
         const group = {
             name: titleRef.current.value,
             description: descriptionRef.current.value,
@@ -24,30 +33,29 @@ export default function AddGroup() {
         let storedGroups = getItem('groups', []);
         groups.push(...storedGroups);
         setItem('groups', groups);
+        history.push("/group/" + group.name);
     }
 
     return (
-        <div>
-            <Grid
-                direction="row"
+        <div className="create-group-container">
+            
+            <p>Create Group</p>
+            <TextField
+                label="Title"
+                inputRef={titleRef}
+            ></TextField>
+            <TextField
+                multiline={true}
+                rows={10}
+                label="Description"
+                inputRef={descriptionRef}
             >
-                <p>Create Group</p>
-                <TextField
-                    label="Title"
-                    inputRef={titleRef}
-                ></TextField>
-                <TextField
-                    multiline={true}
-                    rows={10}
-                    label="Description"
-                    inputRef={descriptionRef}
-                >
 
-                </TextField>
-                <Button onClick={saveGroup}>
-                    Create Group
-                </Button>
-            </Grid>
+            </TextField>
+            <Button onClick={createGroup}>
+                Create Group
+            </Button>
+            
         </div>
     )
 }

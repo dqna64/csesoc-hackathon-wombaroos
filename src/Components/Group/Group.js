@@ -49,7 +49,7 @@ const decksData = [
 ];
 
 export default function Group(props) {
-
+    const groupName = props.match.params.groupname;
     //let new_array = Array.from(props.decks);
 
     //function deleteDeck(index) {
@@ -93,7 +93,7 @@ export default function Group(props) {
         <div className='group-container'>
             <Users usersData={usersData} />
             <Decks decksData={decksData}/>
-            
+            <p>Group Name: {groupName}</p>
         </div>
     );  
 } 
