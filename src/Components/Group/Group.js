@@ -58,47 +58,54 @@ export default function Group(props) {
     //    props.setDecks(new_array);
     //}
 
-    //function renderData() {
+    // let deckArray = []
+    // let groups = getItem("groups");
+    // for (const group in groups){
+    //     if (group.name == groupName) {
+    //         deckArray = group.decks
+    //     }
+    // }
 
-    //    let items = [];
-    //    for (let i = 0; i < props.decks.length; i++) {
-    //        function onDeckDelete() {
-    //            deleteDeck(i);
-    //        }
-    //        items.push(
-    //            <Deck 
-    //                index={i}
-    //                key={i}
-    //                title={props.decks[i][0]}
-    //                onDeckDelete={onDeckDelete}
-    //            />
-    //        );
-    //    }
+    // function renderData() {
 
-    //    setDeck('decks', props.decks);
+    //     let items = [];
+    //     for (let i = 0; i < deckArray.length; i++) {
+    //         function onDeckDelete() {
+    //             deleteDeck(i);
+    //         }
+    //         items.push(
+    //             <Deck 
+    //                 index={i}
+    //                 key={i}
+    //                 title={deckArray[i].name}
+    //                 onDeckDelete={onDeckDelete}
+    //             />
+    //         );
+    //     }
 
-    //    return items;
-    //}
+    //     setDeck('decks', props.decks);
+
+    //     return items;
+    // }
 
 
 
     // ########### -----TO ADD
 
-    //<div className="deckBoard">
-    //    <div className="list">
-    //        {renderData()}
-    //    </div>
-    //</div>
-
     return (
-        <div className='group-container'>
-            <div clasName='group-title'>
+        <div className='group-page-container'>
+            <div className='group-title'>
                 <h1>Group Name: {groupName}</h1>
             </div>
             <div className='group-contents'>
                 <Users usersData={usersData} />
                 <Decks decksData={decksData}/>
             </div>
+            {/* <div className="deckBoard">
+                <div className="list">
+                    {renderData()}
+                </div>
+            </div> */}
         </div>
     );  
 } 

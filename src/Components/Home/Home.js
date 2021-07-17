@@ -1,14 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import StudyGroupButton from '../StudyGroupButton/StudyGroupButton';
 import AddGroupButton from "../AddGroupButton/AddGroupButton";
 import "./Home.css";
-
-const groups = ["1531 Study Group", "the bois", "Physics Class"];
+import {
+  setItem,
+  getItem,
+  removeItem,
+  setSessionItem,
+  getSessionItem,
+  removeSessionItem,
+  getAllDecks,
+  getDeckCards,
+  getAllMembers,
+  saveDeck,
+  saveCard,
+  saveGroup } from '../../Services/storage.js';
 
 export default function Home() {
+  // const [groups, setGroups] = useState([]);
+  const groups = [];
+
+  function fetchGroupNames() {
+    const data = getItem('groups', []);
+    let i;
+    for (i = 0; i < data.length; i++) {
+      // console.log(data[i]);
+      groups.push(data[i].name);
+    }
+  }
+
+  fetchGroupNames();
+
   return (
     <div>
     <div className="group-container">

@@ -3,6 +3,7 @@ import { setItem, getItem, removeItem } from '../../Services/storage.js';
 import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import Deck from "./Deck"
+import "./Group.css"
 
 export default function Decks(props) {
     return (
@@ -10,6 +11,7 @@ export default function Decks(props) {
             {props.decksData.map((deckData) => (<Deck
                 name={deckData.name}
                 dateCreated={deckData.dateCreated}
+                image="/tree-image.jpg"
             />))}
         </div>
     );

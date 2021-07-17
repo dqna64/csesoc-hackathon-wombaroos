@@ -1,11 +1,11 @@
 
-/* .group-container {
+.group-page-container {
     display: flex;
     flex-flow: column nowrap;
-} */
+}
 
 .group-contents {
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -27,4 +27,16 @@
 
 .decks-container {
     background-color: aliceblue;
+    width: 70%;
+    margin: 0px 25px;
+    padding: 23px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.deck-container {
+    width: 50%;
+    padding: 20px;
 }
