@@ -4,7 +4,8 @@
     border-style: none;
     border-radius: 16px;
     width: 94%;
-    padding: 40px;   
+    padding: 40px;  
+    margin-top: 20px; 
 }
 
 .group-container {

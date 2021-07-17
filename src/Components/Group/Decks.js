@@ -27,7 +27,8 @@ export default function Decks(props) {
 
     return (
         <div className='decks-container'>
-            <div className="add-deck">
+            <div className="decks-header">
+                <h2>Decks</h2>
                 <AddDeck group={props.parentGroup} update={setBlah}/>
             </div>
             {decks.map((deck) => (<Deck

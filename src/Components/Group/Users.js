@@ -9,6 +9,7 @@ import User from "./User"
 export default function Users(props) {
     return (
         <div className='users-container'>
+            <h2>Members</h2>
             <Box borderRadius={16}>
                 <Table>
                     <thead>
