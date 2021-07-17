@@ -10,7 +10,7 @@ export default function Users(props) {
     return (
         <div className='users-container'>
             <Box borderRadius={16}>
-                <Table striped>
+                <Table>
                     <thead>
                         <tr>
                             <th>Name</th>

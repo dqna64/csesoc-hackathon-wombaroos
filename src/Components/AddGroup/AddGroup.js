@@ -4,15 +4,25 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { setItem, getItem, removeItem, setSessionItem, getSessionItem, removeSessionItem, } from '../../Services/storage.js';
 
+const members = ["A", "B", "C", "D", "E"];
+
+
 export default function AddGroup() {
     const titleRef = useRef("");
+    const descriptionRef = useRef("");
 
     function saveGroup() {
-        console.log(titleRef.current.value);
-        let groups = [titleRef.current.value];
+        const group = {
+            name: titleRef.current.value,
+            description: descriptionRef.current.value,
+            members: ["A", "B"],
+            colour: "#1639B8",
+            decks: [],
+        }
+
+        let groups = [group];
         let storedGroups = getItem('groups', []);
         groups.push(...storedGroups);
-        console.log(groups);
         setItem('groups', groups);
     }
 
@@ -30,6 +40,7 @@ export default function AddGroup() {
                     multiline={true}
                     rows={10}
                     label="Description"
+                    inputRef={descriptionRef}
                 >
 
                 </TextField>

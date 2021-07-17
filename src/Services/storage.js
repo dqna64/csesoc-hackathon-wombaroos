@@ -95,23 +95,66 @@ function getAllDecks(groupName) {
     let groups = getItem("groups");
     for (const group in groups){
         if (group.name == groupName) {
-            for (const deck in group.decks) {
-                deckArray.push(deck);
-            }
+            deckArray = group.decks
         }
     }
-        
+    return deckArray
 
 }
 
-// function getAllCards() {
+function getDeckCards(groupName, deckName) {
+    let cardArray = []
+    let groups = getItem("groups");
+    for (const group in groups) {
+        if (group.name == groupName) {
+            for (const deck in group.decks) {
+                if (deck.name == deckName) {
+                    cardArray = group.deck.cards
+                }
+            }
+        }
+    }
+    return cardArray
+}
 
-// }
+function getAllMembers(groupName) {
+    let memberArray = []
+    let groups = getItem("groups");
+    for (const group in groups) {
+        if (group.name == groupName) {
+            memberArray = group.members
+        }
+    }
+    return memberArray
+}
 
-// function getAllMembers() {
 
-// }
 
-// function getDeckCards() {
+// TO ADD
 
-// }
+function saveDeck(deck, groupName) {
+    let groups = getItem("groups");
+    for (const group in groups) {
+        if (group.name == groupName) {
+            group.decks.push(deck);    
+        }
+    }    
+}
+
+function saveCard(card, deckName, groupName) {
+    let groups = getItem("groups");
+    for (const group in groups) {
+        if (group.name == groupName) {
+            for (const deck in group.deck) {
+                if (deck == deckName) {
+                    deck.push(card);
+                }
+            }
+        }
+    }
+}
+
+function saveGroup(group) {
+    let groups = getItem("groups");
+    groups.push(group);
+}

@@ -16,8 +16,8 @@ const MyBox = styled(Box)({
   border: 0,
   borderRadius: 3,
   color: 'white',
-  height: 100,
-  width: 48,
+  height: "50%",
+  width: "25%",
   cursor: "pointer"
 });
 
