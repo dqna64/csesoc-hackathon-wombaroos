@@ -118,7 +118,7 @@ export default function Group(props) {
     return (
         <div className='group-page-container'>
             <div className='group-title'>
-                <h1>Group Name: {groupName}</h1>
+                <h1>{groupName}</h1>
             </div>
             <div className='group-contents'>
                 <Users

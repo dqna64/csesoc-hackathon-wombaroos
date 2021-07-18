@@ -36,9 +36,11 @@ export default function Cards(props) {
     return (
         <div>
             <div className="deck-title">
-                Deck Name: {deckName}
+                {deckName}
             </div>
             <p>Start Revision</p>
+
+
             <div className="flashcards-container">
                 {cards.map((card) => (<FlashCard 
                     question={card.question}
