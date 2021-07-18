@@ -37,23 +37,23 @@ let groups =  [
                 cards: [
                     {
                         question: "How can we search a binary tree?",
-                        answer: "Recursion"
+                        answer: "Traverse through the BST recursively and check each item."
                     },
                     {
                         question: "What is a BST?",
-                        answer: "Recursion"
+                        answer: "An ordered tree where each node has up to two children."
                     },
                     {
-                        question: "What's the time complexity of insertion?",
-                        answer: "Recursion"
+                        question: "What's the time complexity of AVL insertion?",
+                        answer: "O(log n)"
                     },
                     {
                         question: "What's a usecase of a BST?",
-                        answer: "Recursion"
+                        answer: "Implementation of a dictionary datastructure"
                     },
                     {
                         question: "What operations can you do on a BST?",
-                        answer: "Recursion"
+                        answer: "Insertion, deletion and search."
                     },
                 ]
             },
@@ -129,6 +129,16 @@ let groups =  [
                 "contributions": 88,
                 "reviews": 508,
             },
+            {
+                "name": "Joseph",
+                "contributions": 85,
+                "reviews": 512,
+            },
+            {
+                "name": "Gordon",
+                "contributions": 81,
+                "reviews": 353,
+            },
         ],
         colour: "#22A9B8",
         decks: [
@@ -180,6 +190,16 @@ let groups =  [
                 "contributions": 88,
                 "reviews": 508,
             },
+            {
+                "name": "Joseph",
+                "contributions": 85,
+                "reviews": 512,
+            },
+            {
+                "name": "Gordon",
+                "contributions": 81,
+                "reviews": 353,
+            },
         ],
         colour: "#22A9B8",
         decks: [
@@ -230,6 +250,16 @@ let groups =  [
                 "name": "Dominic",
                 "contributions": 88,
                 "reviews": 508,
+            },
+            {
+                "name": "Joseph",
+                "contributions": 85,
+                "reviews": 512,
+            },
+            {
+                "name": "Gordon",
+                "contributions": 81,
+                "reviews": 353,
             },
         ],
         colour: "#22A9B8",

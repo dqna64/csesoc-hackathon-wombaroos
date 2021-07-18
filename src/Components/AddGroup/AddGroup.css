@@ -2,9 +2,29 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    width: 800px;
 }
 
 .whiteElement {
-    background-color: white !important;
+    background-color: aliceblue !important;
     margin-bottom: 3px;
+    /* width: 800px; */
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+}
+
+.seperate {
+    /* width: 400px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#CreateGroupContainer {
+    background-color: aliceblue;
+}
+
+#CreateGroupContainer:hover {
+    background-color: aliceblue;
 }

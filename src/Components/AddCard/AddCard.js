@@ -131,7 +131,7 @@ function AddCard(props) {
         // </div>
         // id="outlined-basic" label="Outlined" variant="outlined"
         <div className="add-card">
-            <Card className="card-container">
+            <Card id="CreateCardContainer" className="card-container">
                 <CardContent>
                     <form className="create-deck-form">
                         <div className="form-group">

@@ -10,6 +10,7 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+import './CreateStudyGroupButton'
 
 const MyBox = styled(Box)({
   background: '#313752',
@@ -26,7 +27,7 @@ export default function StudyGroupButton(props) {
   const history = useHistory();
 
   return (
-    <MyBox onClick={() => { history.push("/group") }}>
+    <MyBox className="CreateGroupButton" onClick={() => { history.push("/group") }}>
       <p>Create Group</p>
     </MyBox>
   )

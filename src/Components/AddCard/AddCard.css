@@ -10,6 +10,18 @@
     margin: 2px;
 }
 
+.create-deck-form {
+    height: 200px;
+}
+
 .seperate {
     margin: 10px;
+}
+
+#CreateCardContainer {
+    background-color: #e9eef5;
+}
+
+#CreateCardContainer:hover {
+    background-color: #e9eef5;
 }

@@ -1,12 +1,12 @@
-
-.deck {
+.ddeck {
+    /* height: 40px; */
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-end;
 }
 .form-group {
-    width: 180px;
+    width: 160px;
 }
 
 .btn {

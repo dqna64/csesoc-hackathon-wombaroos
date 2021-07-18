@@ -34,7 +34,10 @@ const members = ["A", "B", "C", "D", "E"];
 
 const useStyles = makeStyles({
     root: {
-      minWidth: 275,
+      minWidth: 100,
+      '& .MuiTextField-root': {
+        width: '75ch',
+      },
     },
     bullet: {
       display: 'inline-block',
@@ -76,7 +79,7 @@ export default function AddGroup() {
         let storedGroups = getItem('groups', []);
         groups.push(...storedGroups);
         setItem('groups', groups);
-        history.push("/group/" + group.name);
+        history.push("/");
     }
 
     const classes = useStyles();
@@ -84,16 +87,19 @@ export default function AddGroup() {
 
     return (
         <div className="create-group-container">
-            <Card className={classes.root}>
+            <Card id="CreateGroupContainer" className={classes.root}>
                 <CardContent>
                     <div className="fields-container">
                         <p>Create Group</p>
-                        <TextField
-                            label="Title"
-                            variant="outlined"
-                            inputRef={titleRef}
-                            className="whiteElement"
-                        ></TextField>
+                        <div className="seperate">
+                            <TextField
+                                label="Title"
+                                variant="outlined"
+                                inputRef={titleRef}
+                                className="whiteElement"
+                            ></TextField>
+                        </div>
+                        <div className="seperate">
                         <TextField
                             multiline={true}
                             rows={10}
@@ -102,8 +108,9 @@ export default function AddGroup() {
                             inputRef={descriptionRef}
                             className="whiteElement"
                         >
-
                         </TextField>
+                        </div>
+
                         <Button className="whiteElement" onClick={createGroup}>
                             Create Group
                         </Button>
