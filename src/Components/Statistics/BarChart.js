@@ -23,7 +23,7 @@ export default class BarChart extends React.Component {
           }
         },
         series: [{
-          name: 'Cards completed',
+          name: 'Contributions',
           data: this.data
         }]
       }

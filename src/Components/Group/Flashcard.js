@@ -112,7 +112,7 @@ export default function Flashcard(props) {
               <Button size="small" color="primary">
                 Hard
               </Button> */}
-              <ButtonGroup className={classes.buttonGroup} color="primary" aria-label="outlined primary button group">
+              <ButtonGroup id="ButtonGroupCard" className={classes.buttonGroup} color="primary" aria-label="outlined primary button group">
                 <Button>Repeat</Button>
                 <Button>Easy</Button>
                 <Button>Hard</Button>

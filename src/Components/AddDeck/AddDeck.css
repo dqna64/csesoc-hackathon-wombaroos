@@ -1,12 +1,13 @@
 .ddeck {
-    /* height: 40px; */
+    height: 40px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
 }
+
 .form-group {
-    width: 160px;
+    width: 180px;
 }
 
 .btn {
@@ -15,8 +16,9 @@
 
 .create-deck-button {
     
+    height: 40px;
 }
 
-/* .create-deck-form {
+.create-deck-form {
     margin-right: 20px;
-} */
+}
