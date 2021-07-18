@@ -7,7 +7,6 @@
 }
 .form-group {
     width: 180px;
-
 }
 
 .btn {
@@ -15,8 +14,9 @@
 }
 
 .create-deck-button {
+    
 }
 
-.create-deck-form {
+/* .create-deck-form {
     margin-right: 20px;
-}
+} */

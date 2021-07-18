@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -26,10 +27,12 @@ import {
     Link,
     useHistory,
   } from "react-router-dom";
+import { CenterFocusStrong } from '@material-ui/icons';
 
 const useStyles = makeStyles({
     root: {
-      minWidth: 275,
+      minWidth: 100,
+      height: 100
     },
     bullet: {
       display: 'inline-block',
@@ -42,6 +45,13 @@ const useStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
+
+    buttonGroup: {
+      // textAlign: 'center',
+      // display: 'flex',
+      // flexFlow: 'row nowrap',
+      // justifyContent: 'space-between',
+    }
 });
 export default function Flashcard(props) {
     const [expanded, setExpanded] = useState(false);
@@ -93,15 +103,20 @@ export default function Flashcard(props) {
               <Typography paragraph>{props.answer}</Typography>
             </CardContent>
             <CardActions disableSpacing>
-              <Button size="small" color="primary">
-                Again
-              </Button>
-              <Button size="small" color="primary">
-                Good
+              {/* <Button size="small" color="primary">
+                Repeat
               </Button>
               <Button size="small" color="primary">
                 Easy
               </Button>
+              <Button size="small" color="primary">
+                Hard
+              </Button> */}
+              <ButtonGroup className={classes.buttonGroup} color="primary" aria-label="outlined primary button group">
+                <Button>Repeat</Button>
+                <Button>Easy</Button>
+                <Button>Hard</Button>
+              </ButtonGroup>
             </CardActions>
           </Collapse>
         </Card>

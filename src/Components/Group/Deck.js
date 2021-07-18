@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./Group.css"
+import "./Deck.css"
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -43,24 +44,24 @@ export default function Deck(props) {
     return (
         <div className='deck-container'>
 
-            <Card className='' onClick={() => { history.push("/deck/" + props.group + "/" + props.name);console.log("/deck/" + props.group + "/" + props.name) }}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        // image="../../../public/assets/deck-images/tree-image.jpg"
-                        // image={require('tree-image.jpg')}
+            <Card className='cardStyle' onClick={() => { history.push("/deck/" + props.group + "/" + props.name);console.log("/deck/" + props.group + "/" + props.name) }}>
+                <CardActionArea className="centered">
+                    {/* <CardMedia
+                        image={'./tree.png'}
+                        style={{height: 100, paddingTop: '56.25%'}}
                         title="Contemplative Reptile"
-                        styles={styles.media}
-                    >
-                        {/* <img src="tree-image.jpg" alt="deck thumbnail"/> */}
-                    </CardMedia>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                    > */}
+                       {/* <img src="tree.png" alt="deck thumbnail"/> */}
+                    {/* </CardMedia> */}
+                    <CardContent className="cardContent">
+                    {/* <div className="divContain"> */}
+                        <Typography variant="h5" component="h2">
                             {props.name}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
                             Date created: {moment(props.dateCreated).format("MMM Do, YYYY")}
                         </Typography>
+                      {/* </div> */}
                     </CardContent>
                 </CardActionArea>
             </Card>

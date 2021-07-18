@@ -4,19 +4,27 @@ import Chart from 'react-apexcharts'
 export default class BarChart extends React.Component {
     constructor(props) {
       super(props);
+
+      this.data = [89,86,74,48,55];
   
       this.state = {
         options: {
           chart: {
             type: 'bar'
           },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              horizontal: true,
+            }
+          },
           xaxis: {
             categories: ["Cameron", "Danil", "Dominic", "Joseph", "Gordon"]
           }
         },
         series: [{
-          name: 'series-1',
-          data: [89,85,82,80,76]
+          name: 'Cards completed',
+          data: this.data
         }]
       }
     }

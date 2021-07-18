@@ -14,11 +14,11 @@ import {
 const MyBox = styled(Box)({
   background: '#313752',
   border: 0,
-  borderRadius: 3,
+  borderRadius: '8px',
   color: 'white',
   height: 100,
   width: 48,
-  padding: '0 30px',
+  padding: '30px',
   cursor: "pointer"
 });
 

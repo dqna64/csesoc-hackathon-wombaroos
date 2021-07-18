@@ -11,27 +11,18 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+import "./AddGroupButton.css";
 
 const MyBox = styled(Box)({
-  background: "#4568fe",
-  border: 0,
-  borderRadius: 10,
-  color: 'white',
-  height: 220,
-  width: 220,
-  margin: "36px",
-  cursor: "pointer",
-  textAlign: "center",
-  lineHeight: 12,
-  boxShadow: "0 10px 20px -8px rgba(0, 0, 0,.7)",
+
 });
 
 export default function AddGroupButton(props) {
   const history = useHistory();
 
   return (
-    <MyBox onClick={() => { history.push("/add-group") }}>
-      <AddIcon style={{ fontSize: 80 }} />
+    <MyBox className="AddGroupButton" onClick={() => { history.push("/add-group") }}>
+      <AddIcon className="AddGroupIcon" style={{ fontSize: 80 }} />
     </MyBox>
   )
 }

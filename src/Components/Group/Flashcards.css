@@ -8,11 +8,19 @@
 
 }
 
+.flashcards-page {
+    width: 100%;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .flashcards-container {
+    width: 80%;
     border-style: none;
     border-radius: 16px;
     background-color: #e9eef5;
-    width: 100%;
     padding: 20px 28px;
 
     display: flex;
@@ -21,6 +29,21 @@
 }
 
 .flashcard-container {
-    /* width: 50%; */
+    width: 33%;
     padding: 20px;
+}
+
+.MuiCard-root:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+.addcard-container {
+    width: 30%;
+}
+
+.allcards-container {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 20px 80px;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { setItem, getItem, removeItem } from '../../Services/storage.js';
 import FlashCard from "./Flashcard";
 import "./Flashcards.css";
+import AddCard from "../AddCard/AddCard";
 
 
 
@@ -34,19 +35,23 @@ export default function Cards(props) {
     console.log(groupName, deckName);
 
     return (
-        <div>
+        <div className="flashcards-page">
             <div className="deck-title">
                 {deckName}
             </div>
             <p>Start Revision</p>
+            <div className="allcards-container">
+                <div className="addcard-container">
+                    <AddCard/>
+                </div>
 
-
-            <div className="flashcards-container">
-                {cards.map((card) => (<FlashCard 
-                    question={card.question}
-                    answer={card.answer}
-                    className="cardStuff"    
-                />))}
+                <div className="flashcards-container">
+                    {cards.map((card) => (<FlashCard 
+                        question={card.question}
+                        answer={card.answer}
+                        className="cardStuff"    
+                    />))}
+                </div>
             </div>
         </div>
     )

@@ -40,7 +40,61 @@ let groups =  [
                         answer: "Recursion"
                     },
                     {
-                        question: "Are graphs good?",
+                        question: "What is a BST?",
+                        answer: "Recursion"
+                    },
+                    {
+                        question: "What's the time complexity of insertion?",
+                        answer: "Recursion"
+                    },
+                    {
+                        question: "What's a usecase of a BST?",
+                        answer: "Recursion"
+                    },
+                    {
+                        question: "What operations can you do on a BST?",
+                        answer: "Recursion"
+                    },
+                ]
+            },
+            {
+                name: "AVL Trees",
+                dateCreated: "2021-07-13",
+                cards: [
+                    {
+                        question: "How are AVL trees different from regular BSTs?",
+                        answer: "They balance the tree upon insertion"
+                    },
+                    {
+                        question: "Can they be layed out similarly to BSTs?",
+                        answer: "Yes"
+                    }
+                ]
+            },
+            {
+                name: "Recursion",
+                dateCreated: "2021-07-13",
+                cards: [
+                    {
+                        question: "How are AVL trees different from regular BSTs?",
+                        answer: "They balance the tree upon insertion"
+                    },
+                    {
+                        question: "Can they be layed out similarly to BSTs?",
+                        answer: "Yes"
+                    }
+                ]
+            },
+            {
+                name: "P vs NP",
+                dateCreated: "2021-07-13",
+                cards: [
+                    {
+                        question: "How are AVL trees different from regular BSTs?",
+                        answer: "They balance the tree upon insertion"
+                    },
+                    {
+                        question: "Can they be layed out similarly to BSTs?",
                         answer: "Yes"
                     }
                 ]
@@ -59,6 +113,159 @@ let groups =  [
     },
     {
         name: "Physics Tutorial Wednesday",
+        members: [
+            {
+                "name": "Cameron",
+                "contributions": 92,
+                "reviews": 462,
+            },
+            {
+                "name": "Danil",
+                "contributions": 90,
+                "reviews": 501,
+            },
+            {
+                "name": "Dominic",
+                "contributions": 88,
+                "reviews": 508,
+            },
+        ],
+        colour: "#22A9B8",
+        decks: [
+            {
+                name: "Mechanics",
+                dateCreated: "2021-07-14",
+                cards: [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            },
+            {
+                name: "Electromagnetism",
+                dateCreated: "2021-07-08",
+                cards: [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: "1531 Group",
+        members: [
+            {
+                "name": "Cameron",
+                "contributions": 92,
+                "reviews": 462,
+            },
+            {
+                "name": "Danil",
+                "contributions": 90,
+                "reviews": 501,
+            },
+            {
+                "name": "Dominic",
+                "contributions": 88,
+                "reviews": 508,
+            },
+        ],
+        colour: "#22A9B8",
+        decks: [
+            {
+                name: "Mechanics",
+                dateCreated: "2021-07-14",
+                cards: [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            },
+            {
+                name: "Electromagnetism",
+                dateCreated: "2021-07-08",
+                cards: [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: "HSC Chemistry",
+        members: [
+            {
+                "name": "Cameron",
+                "contributions": 92,
+                "reviews": 462,
+            },
+            {
+                "name": "Danil",
+                "contributions": 90,
+                "reviews": 501,
+            },
+            {
+                "name": "Dominic",
+                "contributions": 88,
+                "reviews": 508,
+            },
+        ],
+        colour: "#22A9B8",
+        decks: [
+            {
+                name: "Mechanics",
+                dateCreated: "2021-07-14",
+                cards: [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            },
+            {
+                name: "Electromagnetism",
+                dateCreated: "2021-07-08",
+                cards: [
+                    {
+                        question: "Favourite colour",
+                        answer: "Blue"
+                    },
+                    {
+                        question: "Apples or oranges",
+                        answer: "Both"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: "Learning Spanish",
         members: [
             {
                 "name": "Cameron",

@@ -11,9 +11,9 @@
 .group-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .groupTitle {
@@ -28,4 +28,12 @@
 .AddGroupButton {
     width: 220px;
     height: 220px;
+}
+
+.group-button-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }

@@ -1,0 +1,15 @@
+.add-card {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.create-deck-button {
+    margin: 2px;
+}
+
+.seperate {
+    margin: 10px;
+}
